@@ -1,0 +1,7 @@
+print("A\tB\nC")
+print("x", "y", sep="\n")
+print("5" + "3", "5" * 3)
+print(7 / 2, 7 // 2, 7 % 2)
+print("Hello", end="")
+print(" World")
+print(r"a\nb", len(r"a\nb"), len("a\nb"))
