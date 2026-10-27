@@ -101,3 +101,22 @@ except* ValueError as eg:
     print("ValueError part:", eg.exceptions)
 except* TypeError as eg:
     print("TypeError part:", eg.exceptions)
+
+
+
+
+
+
+    
+
+#Why did the specific ValueError handler never run in example 2?
+#Why is a bare except: risky? What does except Exception leave alone, and why is that good?
+#Why does print(err) fail after the except block?
+
+#Pattern	                                       #Use when
+#except ValueError:                   #	You expect one specific problem
+#except (A, B):	                       #Two problems get the same handling
+#except Parent:	#                    #You want a whole family (LookupError, OSError)
+#except Exception as e:	              #At a program boundary, to log and continue
+#except:(bare)	                                     #Almost never
+#except*	                       You handle ExceptionGroups, usually from concurrent code

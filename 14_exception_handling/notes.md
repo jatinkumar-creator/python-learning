@@ -81,3 +81,21 @@ What is the difference between BaseException and Exception?
 What does a with block do when an exception occurs inside it?
 What is EAFP, and how does it differ from LBYL?
 What is an ExceptionGroup, and what does except* do?
+
+
+
+
+
+
+Problem	Fix
+#SyntaxError: expected 'except' or 'finally' block	 -----------------    #A try needs at least one except or a finally
+#SyntaxError: multiple exception types must be parenthesized  --------------  #Write except (A, B): with parentheses
+#An error vanishes and the result is wrong  ---------------------------------#A bare except: or except Exception: pass is hiding it. Catch the specific error and log it
+#A specific except never runs ----------------------------------------------#A broader one sits above it. Put the most specific handlers first
+#NameError for e after the block	 -------------------------------------------#The as e name is deleted when the block ends. Copy it first (saved = e)
+#TypeError: exceptions must derive from BaseException	-----------------    #You raised or caught something that isnt an exception class
+#RuntimeError: No active exception to reraise	------------------  #A bare raise outside an except block
+#Asserts stop working	----------------------------               #Python was started with -O. Dont use assert for validation
+KeyError message shows extra quotes	--------------------------------  #A known quirk: str(KeyError("k")) quotes its argument
+
+
