@@ -1,0 +1,64 @@
+# Topic 14: Garbage Collection, Iterators, Generators
+
+## Garbage collection
+| Mechanism | What it frees | When | Weakness |
+|---|---|---|---|
+| Reference counting | | | |
+| Cyclic GC | | | |
+
+(What is a reference cycle? What does del really do? What is a weak reference for?)
+
+## gc module
+| Function | Does |
+|---|---|
+
+## Iterable vs iterator
+| | Iterable | Iterator |
+|---|---|---|
+| Methods | | |
+| Reusable? | | |
+| Example | | |
+
+What a for loop does behind the scenes:
+
+## Custom iterators
+(Three styles: own iterator class, iterable returning fresh iterators, __iter__ as a generator)
+
+## Generators
+(yield vs return, lazy evaluation, memory use, one-pass rule)
+
+## Generator features
+| Feature | What it does | Example |
+|---|---|---|
+| yield from | | |
+| send() | | |
+| close() | | |
+| return value (StopIteration.value) | | |
+
+## Generator expression vs list comprehension
+(Syntax, memory, speed, when to use each)
+
+## Context managers
+(__enter__/__exit__ vs @contextmanager. Which part is before yield, which after?)
+
+## Errors I triggered
+| Code | Error name | Why |
+|---|---|---|
+
+## Predictions I got wrong today
+
+## Questions I still have
+
+Interview questions to answer in notes.md
+How does Python manage memory? What is reference counting?
+What is the cyclic garbage collector, and why is it needed?
+What does del x actually do?
+What is a weak reference, and when would you use one?
+Why is __del__ unreliable for cleanup, and what should you use instead?
+What is the difference between an iterable and an iterator?
+What does a for loop do behind the scenes?
+What is a generator, and how is it different from a regular function?
+What is the difference between a generator expression and a list comprehension?
+What do yield from, send(), and close() do?
+Why can a generator be iterated only once?
+When would you choose a generator over a list?
