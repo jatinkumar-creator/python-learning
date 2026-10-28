@@ -73,3 +73,14 @@ tk.Button(row, text="Add circle", command=lambda: canvas.create_oval(
 tk.Button(row, text="Delete all shapes", command=lambda: canvas.delete("shape")).pack(side="left", padx=3)
 
 root.mainloop()
+
+
+
+
+
+#def add_circle():
+    #x = random.randint(0, W - 40)
+    #y = random.randint(130, H - 40)
+    #canvas.create_oval(x, y, x + 40, y + 40, fill=random_colour(), tags="shape")
+
+     #use command=add_circle.

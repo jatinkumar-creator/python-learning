@@ -55,7 +55,7 @@ Event attributes I used:
 What is the difference between command= and bind()?
 What does the event object contain? Name five attributes.
 What does returning "break" from a binding do, and what is a bindtag?
-How do you react to a window’s close button?
+How do you react to a windows close button?
 Why does a Frame sometimes not receive key events?
 What do messagebox.askyesno and askyesnocancel return?
 What does askopenfilename return when the user cancels, and why does it matter?
