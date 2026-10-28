@@ -37,3 +37,36 @@
 # t.start()                                      # TypeError INSIDE the thread: the traceback prints, the main thread continues
 # t.join()
 # print("main is still alive")
+
+
+
+
+#Careful with this one (Windows). If you ever need to stop a runaway script, press Ctrl + C.
+# import multiprocessing as mp
+# def hello():
+#     print("child says hello")
+# p = mp.Process(target=hello)                   # no "if __name__ == '__main__':" guard
+# p.start()                                      # RuntimeError: an attempt has been made to start a new process
+# p.join()                                       # before the current process has finished its bootstrapping phase
+
+# import multiprocessing as mp
+# if __name__ == "__main__":
+#     p = mp.Process(target=lambda: print("hi"))  # lambdas cannot be pickled for the new process
+#     p.start()                                   # AttributeError / PicklingError: Can't pickle local object
+
+#Silent traps (no error at all):
+# 1. Reading results before join(): the numbers are incomplete
+# import threading, time
+# results = []
+# def work(n):
+#     time.sleep(0.2)
+#     results.append(n)
+# threads = [threading.Thread(target=work, args=(i,)) for i in range(3)]
+# for t in threads: t.start()
+# print(results)                                  # [] because nothing has finished yet
+# for t in threads: t.join()
+# print(sorted(results))
+
+# 2. Starting and joining inside the same loop makes the threads run one at a time
+# for i in range(3):
+#     t = threading.Thread(target=work, args=(i,)); t.start(); t.join()    # no concurrency at all
